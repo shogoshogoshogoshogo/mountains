@@ -10,27 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_11_11_113429) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_10_093814) do
   create_table "comments", charset: "utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "height"
-    t.string "location"
-    t.date "date_climbed"
-    t.string "difficulty"
-    t.text "description"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
-  create_table "mountains", charset: "utf8", force: :cascade do |t|
+    t.text "content"
     t.bigint "user_id", null: false
     t.bigint "mountain_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["mountain_id"], name: "index_mountains_on_mountain_id"
-    t.index ["user_id"], name: "index_mountains_on_user_id"
+    t.index ["user_id"], name: "fk_rails_03de2dc08c"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -52,6 +39,4 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_11_113429) do
   end
 
   add_foreign_key "comments", "users"
-  add_foreign_key "mountains", "mountains"
-  add_foreign_key "mountains", "users"
 end

@@ -1,6 +1,6 @@
 class CreateMountains < ActiveRecord::Migration[7.0]
   def change
-    create_table :mountaions do |t|
+    create_table :mountain do |t|
       t.string :name, null: false          # 山の名前
       t.integer :height                    # 山の標高
       t.string :location                   # 山の所在地

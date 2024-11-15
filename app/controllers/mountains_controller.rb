@@ -8,8 +8,12 @@ class MountainsController < ApplicationController
   end
 
   def create
-    Mountain.create(mountain_params)
-    redirect_to '/'
+    @mountain = current_user.mountains.create(mountain_params)
+    if @mountain.persisted?
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -24,4 +28,9 @@ class MountainsController < ApplicationController
     @comment = Comment.new
   end
   
+  private
+
+def mountain_params
+  params.require(:mountain).permit(:name, :height, :location, :date_climbed, :difficulty, :description)
+end
 end

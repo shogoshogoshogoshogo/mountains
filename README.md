@@ -26,7 +26,7 @@ has_many :comments
 |height               |string|                                 |
 |location             |string|                                 |
 |date_climbed         |date|                                   |  
-|difficulty           |string|                                 |
+|difficulty           |integer|                                |
 |description          |text|                                   |
 |user                 |references|null: false,foreign_key: true|
 

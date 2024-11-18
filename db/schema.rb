@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_15_105034) do
     t.integer "height"
     t.string "location"
     t.date "date_climbed"
-    t.string "difficulty"
+    t.integer "difficulty_id"
     t.text "description"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

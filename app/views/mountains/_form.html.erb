@@ -11,13 +11,24 @@
     <%= f.label :location %>
     <%= f.text_field :location %>
   </div>
+
+  <!-- 年月日のプルダウン -->
   <div>
-    <%= f.label :date_climbed, "Climb Date" %>
-    <%= f.date_select :date_climbed %>
+    <%= f.label :year_id, "年" %>
+    <%= f.select :year_id, Year.all.map { |y| [y.name, y.id] }, { include_blank: "選択してください" }, class: "form-control" %>
   </div>
   <div>
+    <%= f.label :month_id, "月" %>
+    <%= f.select :month_id, Month.all.map { |m| [m.name, m.id] }, { include_blank: "選択してください" }, class: "form-control" %>
+  </div>
+  <div>
+    <%= f.label :day_id, "日" %>
+    <%= f.select :day_id, Day.all.map { |d| [d.name, d.id] }, { include_blank: "選択してください" }, class: "form-control" %>
+  </div>
+
+  <div>
     <%= f.label :difficulty_id, "Difficulty" %>
-    <%= f.select :difficulty_id, Difficulty.all.map { |d| [d.name, d.id] } %>
+    <%= f.select :difficulty_id, Difficulty.all.map { |d| [d.name, d.id] }, { include_blank: "選択してください" }, class: "form-control" %>
   </div>
   <div>
     <%= f.label :description %>

@@ -1,0 +1,27 @@
+<%= form_with model: @mountain, local: true do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :height %>
+    <%= f.number_field :height %>
+  </div>
+  <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+  <div>
+    <%= f.label :date_climbed, "Climb Date" %>
+    <%= f.date_select :date_climbed %>
+  </div>
+  <div>
+    <%= f.label :difficulty_id, "Difficulty" %>
+    <%= f.select :difficulty_id, Difficulty.all.map { |d| [d.name, d.id] } %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <%= f.submit %>
+<% end %>

@@ -1,1 +1,28 @@
-aaaaaaaa
+<h1>登山記録一覧</h1>
+
+<%= link_to '新しい記録を追加する', new_mountain_path, class: 'btn btn-primary' %>
+
+<div class="mountains-list">
+  <% @mountains.each do |mountain| %>
+    <div class="mountain-card">
+      <h2><%= link_to mountain.name, mountain_path(mountain) %></h2>
+      <p><strong>標高:</strong> <%= mountain.height %> m</p>
+      <p><strong>所在地:</strong> <%= mountain.location %></p>
+      <p><strong>登山日:</strong> <%= mountain.date_climbed.strftime('%Y年%m月%d日') %></p>
+      <p><strong>難易度:</strong> <%= mountain.difficulty.name %></p>
+      <p><strong>説明:</strong> <%= mountain.description %></p>
+
+      <div class="comments-section">
+        <h3>コメント一覧</h3>
+        <% mountain.comments.each do |comment| %>
+          <div class="comment">
+            <p><strong><%= comment.user.name %>:</strong> <%= comment.content %></p>
+          </div>
+        <% end %>
+
+        <%= link_to 'コメントを追加する', new_mountain_comment_path(mountain), class: 'btn btn-secondary' %>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+</div>

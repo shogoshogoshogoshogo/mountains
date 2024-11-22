@@ -1,0 +1,7 @@
+body {
+  background-image: url('https://media.gettyimages.com/id/1464891155/ja/%E5%86%99%E7%9C%9F/scottish-highlands-in-winter.jpg?s=2048x2048&w=gi&k=20&c=5t0J_Y4XrpHG_7FI5yt9TliiP_RKQY_Ttl3EqiHgpEk='); 
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: black; /* テキスト色を白にする */
+}

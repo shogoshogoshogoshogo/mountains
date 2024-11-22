@@ -1,38 +1,29 @@
-<%= form_with model: @mountain, local: true do |f| %>
+<%= form_with model: mountain, local: true do |f| %>
   <div>
-    <%= f.label :name %>
+    <%= f.label :name, "山の名前" %>
     <%= f.text_field :name %>
   </div>
   <div>
-    <%= f.label :height %>
+    <%= f.label :height, "標高 (m)" %>
     <%= f.number_field :height %>
   </div>
   <div>
-    <%= f.label :location %>
+    <%= f.label :location, "所在地" %>
     <%= f.text_field :location %>
   </div>
-
-  <!-- 年月日のプルダウン -->
   <div>
-    <%= f.label :year_id, "年" %>
-    <%= f.select :year_id, Year.all.map { |y| [y.name, y.id] }, { include_blank: "選択してください" }, class: "form-control" %>
+    <%= f.label :date_climbed, "登山日" %>
+    <%= f.date_select :date_climbed %>
   </div>
   <div>
-    <%= f.label :month_id, "月" %>
-    <%= f.select :month_id, Month.all.map { |m| [m.name, m.id] }, { include_blank: "選択してください" }, class: "form-control" %>
+    <%= f.label :difficulty_id, "難易度" %>
+    <%= f.select :difficulty_id, Difficulty.all.map { |d| [d.name, d.id] }, include_blank: "選択してください" %>
   </div>
   <div>
-    <%= f.label :day_id, "日" %>
-    <%= f.select :day_id, Day.all.map { |d| [d.name, d.id] }, { include_blank: "選択してください" }, class: "form-control" %>
-  </div>
-
-  <div>
-    <%= f.label :difficulty_id, "Difficulty" %>
-    <%= f.select :difficulty_id, Difficulty.all.map { |d| [d.name, d.id] }, { include_blank: "選択してください" }, class: "form-control" %>
-  </div>
-  <div>
-    <%= f.label :description %>
+    <%= f.label :description, "説明" %>
     <%= f.text_area :description %>
   </div>
-  <%= f.submit %>
+  <div>
+    <%= f.submit "記録を保存する", class: "btn btn-primary" %>
+  </div>
 <% end %>

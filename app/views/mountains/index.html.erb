@@ -8,7 +8,7 @@
       <h2><%= link_to mountain.name, mountain_path(mountain) %></h2>
       <p><strong>標高:</strong> <%= mountain.height %> m</p>
       <p><strong>所在地:</strong> <%= mountain.location %></p>
-      <p><strong>登山日:</strong> <%= mountain.date_climbed.strftime('%Y年%m月%d日') %></p>
+      <p><strong>登山日:</strong> <%= mountain.date_climbed.date('%Y年%m月%d日') %></p>
       <p><strong>難易度:</strong> <%= mountain.difficulty.name %></p>
       <p><strong>説明:</strong> <%= mountain.description %></p>
 

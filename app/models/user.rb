@@ -18,7 +18,7 @@ class User < ApplicationRecord
            validates :family_name_kana, format: { with: VALID_KANA_REGEX, message: '全角カタカナのみ使用してください' }
            validates :first_name_kana, format: { with: VALID_KANA_REGEX, message: '全角カタカナのみ使用してください' }       
         end
-        has_many :moutains
+        has_many :mountains, dependent: :destroy
         has_many :comments
 end
   

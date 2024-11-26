@@ -19,7 +19,7 @@
   </div>
   <div>
     <%= f.label :difficulty_id, "難易度" %>
-    <%= f.select :difficulty_id, Difficulty.all.map { |d| [d.name, d.id] }, include_blank: "選択してください" %>
+    <%= f.collection_select(:difficulty_id, Difficulty.all, :id, :name, {}, {class: "select-box", id: "difficulty-select"}) %>
   </div>
   <div>
     <%= f.label :description, "説明" %>

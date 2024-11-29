@@ -19,17 +19,17 @@
   </div>
   <div>
   <%= f.label :year_id, "年" %>
-  <%= f.collection_select(:year_id, Year.all, :id, :name, { include_blank: "選択してください" }, { class: "select-box", id: "year-select" }) %>
+  <%= f.collection_select(:year_id, Year.all, :id, :name, {}, {class: "select-box", id: "year-select" }) %>
 </div>
 
 <div>
   <%= f.label :month_id, "月" %>
-  <%= f.collection_select(:month_id, Month.all, :id, :name, { include_blank: "選択してください" }, { class: "select-box", id: "month-select" }) %>
+  <%= f.collection_select(:month_id, Month.all, :id, :name, {}, {class: "select-box", id: "difficulty-select"}) %>
 </div>
 
 <div>
   <%= f.label :day_id, "日" %>
-  <%= f.collection_select(:day_id, Day.all, :id, :name, { include_blank: "選択してください" }, { class: "select-box", id: "day-select" }) %>
+  <%= f.collection_select(:day_id, Day.all, :id, :name, {}, { class: "select-box", id: "day-select" }) %>
 </div>
   <div>
     <%= f.label :difficulty_id, "難易度" %>

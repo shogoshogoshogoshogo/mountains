@@ -8,11 +8,11 @@ class MountainsController < ApplicationController
   end
 
   def create
-    @mountain = current_user.mountains.create(mountain_params)
-    if @mountain.persisted?
+    @mountain = current_user.mountains.build(mountain_params) # build を使用
+    if @mountain.save
       redirect_to root_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

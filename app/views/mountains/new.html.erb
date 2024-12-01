@@ -13,10 +13,7 @@
     <%= f.label :location, "所在地" %>
     <%= f.text_field :location %>
   </div>
-  <div>
-    <%= f.label :date_climbed, "登山日" %>
-    <%= f.date_select :date_climbed %>
-  </div>
+  
   <div>
   <%= f.label :year_id, "年" %>
   <%= f.collection_select(:year_id, Year.all, :id, :name, {}, { include_blank: "選択してください" },{class: "select-box", id: "year-select" }) %>

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"] 
     end
     def after_sign_in_path_for(resource)
-      root_path # または index_path など、適切なパスを指定
+      '/'
     end
   end
 end

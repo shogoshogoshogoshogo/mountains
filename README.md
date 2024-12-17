@@ -1,5 +1,6 @@
 Moutains ER
-
+[![Image from Gyazo](https://i.gyazo.com/48b15c6a2f123b00add39d537cce2bee.png)](https://gyazo.com/48b15c6a2f123b00add39d537cce2bee)
+[![Image from Gyazo](https://i.gyazo.com/4d7375191e349482e0f769af31c6186f.png)](https://gyazo.com/4d7375191e349482e0f769af31c6186f)
 ## users テーブル
 
 |Column               |Type  |Options                  |
